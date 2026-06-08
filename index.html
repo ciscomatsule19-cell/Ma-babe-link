@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>❤️ Our First Year ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(to bottom,#fff0f5,#ffe4ec);
+overflow-x:hidden;
+color:#333;
+}
+
+/* Floating Hearts */
+.hearts{
+position:fixed;
+width:100%;
+height:100%;
+pointer-events:none;
+top:0;
+left:0;
+z-index:1;
+overflow:hidden;
+}
+
+.heart{
+position:absolute;
+bottom:-50px;
+color:#ff5e8a;
+font-size:24px;
+animation:floatUp linear infinite;
+opacity:.7;
+}
+
+@keyframes floatUp{
+0%{
+transform:translateY(0) rotate(0deg);
+opacity:0;
+}
+20%{
+opacity:0.8;
+}
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+}
+
+/* Hero Section */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+position:relative;
+z-index:2;
+}
+
+.hero h1{
+font-family:'Great Vibes',cursive;
+font-size:5rem;
+color:#ff4f81;
+text-shadow:0 0 20px rgba(255,79,129,.4);
+}
+
+.hero p{
+font-size:1.2rem;
+margin-top:15px;
+}
+
+.date{
+font-weight:600;
+font-size:1.3rem;
+margin-top:10px;
+}
+
+.music-btn{
+margin-top:30px;
+padding:15px 30px;
+border:none;
+border-radius:40px;
+background:#ff4f81;
+color:white;
+font-size:1rem;
+cursor:pointer;
+box-shadow:0 8px 20px rgba(255,79,129,.4);
+transition:.3s;
+}
+
+.music-btn:hover{
+transform:scale(1.05);
+}
+
+/* Gallery */
+.gallery{
+max-width:1000px;
+margin:auto;
+padding:40px 20px;
+position:relative;
+z-index:2;
+}
+
+.card{
+background:white;
+border-radius:25px;
+padding:30px;
+margin-bottom:40px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+text-align:center;
+}
+
+.card-emoji{
+font-size:4rem;
+margin-bottom:20px;
+}
+
+.quote{
+padding:20px;
+text-align:center;
+font-style:italic;
+color:#ff4f81;
+font-size:1.1rem;
+line-height:1.6;
+}
+
+footer{
+text-align:center;
+padding:80px 20px;
+font-size:1.2rem;
+position:relative;
+z-index:2;
+}
+
+.love-letter{
+max-width:800px;
+margin:60px auto;
+background:white;
+padding:35px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+line-height:1.8;
+text-align:center;
+}
+
+.love-letter h2{
+color:#ff4f81;
+margin-bottom:20px;
+font-size:1.8rem;
+}
+</style>
+</head>
+<body>
+
+<div class="hearts" id="hearts"></div>
+
+<audio id="song" loop>
+<source src="https://assets.mixkit.co/active_storage/sfx/2868/2868-preview.mp3" type="audio/mpeg">
+</audio>
+
+<section class="hero">
+<h1>Our First Year ❤️</h1>
+
+<p>365 days of memories, laughter and love.</p>
+
+<div class="date">
+09 June 2025 — 09 June 2026
+</div>
+
+<button class="music-btn" onclick="playMusic()">
+Open My Heart ❤️
+</button>
+</section>
+
+<div class="love-letter">
+<h2>To My Love ❤️</h2>
+
+<p>
+Thank you for every laugh, every conversation,
+every hug, every moment we shared.
+This year with you has been the happiest chapter
+of my life, and I can't wait to make many more memories
+with you.
+</p>
+</div>
+
+<section class="gallery">
+
+<div class="card">
+<div class="card-emoji">😊</div>
+<div class="quote">
+"Every time your hand finds mine, the whole world feels quieter."
+</div>
+</div>
+
+<div class="card">
+<div class="card-emoji">💬</div>
+<div class="quote">
+"One year later and you're still my favorite notification."
+</div>
+</div>
+
+<div class="card">
+<div class="card-emoji">👣</div>
+<div class="quote">
+"Every step is better when it's beside you."
+</div>
+</div>
+
+<div class="card">
+<div class="card-emoji">🔥</div>
+<div class="quote">
+"Partners in crime, best friends in love."
+</div>
+</div>
+
+<div class="card">
+<div class="card-emoji">😍</div>
+<div class="quote">
+"Your smile is still my favorite view."
+</div>
+</div>
+
+<div class="card">
+<div class="card-emoji">🏠</div>
+<div class="quote">
+"Home isn't a place anymore. It's you."
+</div>
+</div>
+
+<div class="card">
+<div class="card-emoji">📸</div>
+<div class="quote">
+"Thank you for every beautiful memory."
+</div>
+</div>
+
+<div class="card">
+<div class="card-emoji">🌟</div>
+<div class="quote">
+"My favorite place will always be next to you."
+</div>
+</div>
+
+</section>
+
+<footer>
+❤️ Happy 1 Year Anniversary ❤️
+
+<br><br>
+
+Forever starts with us.
+</footer>
+
+<script>
+function playMusic(){
+const song = document.getElementById('song');
+if(song.paused){
+song.play();
+} else {
+song.pause();
+}
+}
+
+function createHeart(){
+const heart=document.createElement('div');
+heart.classList.add('heart');
+heart.innerHTML='❤️';
+
+heart.style.left=Math.random()*100+'vw';
+heart.style.fontSize=(Math.random()*25+15)+'px';
+heart.style.animationDuration=(Math.random()*6+6)+'s';
+
+document.getElementById('hearts').appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},12000);
+}
+
+setInterval(createHeart,300);
+</script>
+
+</body>
+</html>
